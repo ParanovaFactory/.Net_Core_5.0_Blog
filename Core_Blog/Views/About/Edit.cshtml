@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Edit About Us</h3>
+</div>
+@using (Html.BeginForm("Edit", "About", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.AboutId)
+    <br />
+    @Html.Label("About Title")
+    @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
+    <br />
+    @Html.Label("About Age")
+    @Html.TextBoxFor(x => x.AboutAge, new { @class = "form-control" })
+    <br />
+    @Html.Label("About Mail")
+    @Html.TextBoxFor(x => x.AboutMail, new { @class = "form-control" })
+    <br />
+    @Html.Label("About Phone")
+    @Html.TextBoxFor(x => x.AboutPhone, new { @class = "form-control" })
+    <br />
+    @Html.Label("About Address")
+    @Html.TextBoxFor(x => x.AboutAddress, new { @class = "form-control" })
+    <br />
+    @Html.Label("About Image Url")
+    @Html.TextBoxFor(x => x.AboutImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("About Description")
+    @Html.TextAreaFor(x => x.AboutDescription, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-success">UPDATE</button>
+}

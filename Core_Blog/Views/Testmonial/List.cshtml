@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<Testmonial>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Testmonial Table</h3>
+</div>
+<!--Table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Name</th>
+                <th scope="col" class="sort" data-sort="status">Company</th>
+                <th scope="col">Delete</th>
+                <th scope="col" class="sort" data-sort="completion">Comment</th>
+                <th scope="col" class="sort" data-sort="completion">Image</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TestmonialId</td>
+                    <td class="budget">@item.TestmonialName</td>
+                    <td>@item.TestmonialCompany</td>
+                    <td>@item.TestmonialComment</td>
+                    <td>@item.TestmonialImage</td>
+                    <td><a href="/Testmonial/Delete/@item.TestmonialId" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/Testmonial/Edit/@item.TestmonialId" class="btn btn-warning">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Testmonial/Add/" class="btn btn-primary">Add New Testmonial</a>
+</div>

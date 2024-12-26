@@ -1,0 +1,71 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card-body">
+    <div class="card-header border-0">
+        <h3 class="mb-0">About Us</h3>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="pl-lg-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-username">Title</label>
+                        <input type="text" id="input-username" class="form-control" value="@item.AboutTitle" disabled>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-email">Age</label>
+                        <input type="text" class="form-control" value="@item.AboutAge" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-username">Mail</label>
+                        <input type="text" id="input-username" class="form-control" value="@item.AboutMail" disabled>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-email">Phone</label>
+                        <input type="text" class="form-control" value="@item.AboutPhone" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-username">Address</label>
+                        <input type="text" id="input-username" class="form-control" value="@item.AboutAddress" disabled>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-email">Image Url</label>
+                        <input type="text" class="form-control" value="@item.AboutImage" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="form-control-label" for="input-email">Description</label>
+                    <textarea name="AboutDescription" class="form-control" rows="4" cols="50" disabled>@item.AboutDescription</textarea>
+                </div>
+            </div>
+        </div>
+        <a href="/About/Edit/@item.AboutId" class="btn btn-primary">Edit About</a>
+    }
+</div>

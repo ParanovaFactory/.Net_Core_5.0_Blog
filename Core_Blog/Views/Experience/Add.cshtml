@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add Skill</h3>
+</div>
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Experience Title")
+    <input type="text" name="ExperienceTitle" class="form-control" />
+    <br />
+    @Html.Label("Experience Description")
+    <textarea name="ExperienceDescription" class="form-control" rows="4" cols="50"></textarea>
+    <br />
+    @Html.Label("Experience Date")
+    <input type="text" name="ExperienceDate" class="form-control" />
+    <br />
+    @Html.Label("Experience Image")
+    <input type="text" name="ExperienceImage" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-primary">SAVE</button>
+</form>

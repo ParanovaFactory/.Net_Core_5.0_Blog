@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Testmonial
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Edit Testmonial</h3>
+</div>
+@using (Html.BeginForm("Edit", "Testmonial", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.TestmonialId)
+    <br />
+    @Html.Label("Testmonial Name")
+    @Html.TextBoxFor(x => x.TestmonialName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Testmonial Company")
+    @Html.TextAreaFor(x => x.TestmonialCompany, new { @class = "form-control" })
+    <br />
+    @Html.Label("Testmonial Comment")
+    @Html.TextBoxFor(x => x.TestmonialComment, new { @class = "form-control" })
+    <br />
+    @Html.Label("Testmonial Image")
+    @Html.TextBoxFor(x => x.TestmonialImage, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-success">UPDATE</button>
+}

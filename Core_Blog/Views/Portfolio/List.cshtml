@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Portfolio Table</h3>
+</div>
+<!--Table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Portfolio Name</th>
+                <th scope="col" class="sort" data-sort="status">Project Name</th>
+                <th scope="col">Delete</th>
+                <th scope="col" class="sort" data-sort="completion">Edit</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PortfolioId</td>
+                    <td class="budget">
+                        @item.PortfolioName
+                    </td>
+                    <td>@item.PortfolioProject</td>
+                    <td><a href="/Portfolio/Delete/@item.PortfolioId" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/Portfolio/Edit/@item.PortfolioId" class="btn btn-warning">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Portfolio/Add/" class="btn btn-primary">Add New Project</a>
+</div>

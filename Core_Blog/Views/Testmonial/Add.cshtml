@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add Testmonial</h3>
+</div>
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Testmonial Name")
+    <input type="text" name="TestmonialName" class="form-control" />
+    <br />
+    @Html.Label("Testmonial Company")
+    <textarea name="TestmonialCompany" class="form-control" rows="4" cols="50"></textarea>
+    <br />
+    @Html.Label("Testmonial Comment")
+    <input type="text" name="TestmonialComment" class="form-control" />
+    <br />
+    @Html.Label("Testmonial Image")
+    <input type="text" name="TestmonialImage" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-primary">SAVE</button>
+</form>

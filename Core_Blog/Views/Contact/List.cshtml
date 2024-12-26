@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Contact Table</h3>
+</div>
+<!--Table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Title</th>
+                <th scope="col" class="sort" data-sort="status">Description</th>
+                <th scope="col">Mail</th>
+                <th scope="col" class="sort" data-sort="completion">Phone</th>
+                <th scope="col" class="sort" data-sort="completion">Edit</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ContactId</td>
+                    <td class="budget">@item.ContactTitle</td>
+                    <td>@item.ContactDescription</td>
+                    <td>@item.ContactMail</td>
+                    <td>@item.ContactPhone</td>
+                    <td><a href="/Contact/Edit/@item.ContactId" class="btn btn-warning">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

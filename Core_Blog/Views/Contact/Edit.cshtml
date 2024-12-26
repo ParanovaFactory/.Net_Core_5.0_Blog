@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Edit Contact</h3>
+</div>
+@using (Html.BeginForm("Edit", "Contact", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ContactId)
+    <br />
+    @Html.Label("Contact Title")
+    @Html.TextBoxFor(x => x.ContactTitle, new { @class = "form-control" })
+    <br />
+    @Html.Label("Contact Description")
+    @Html.TextAreaFor(x => x.ContactDescription, new { @class = "form-control" })
+    <br />
+    @Html.Label("Contact Mail")
+    @Html.TextBoxFor(x => x.ContactMail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Contact Phone")
+    @Html.TextBoxFor(x => x.ContactPhone, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-success">UPDATE</button>
+}

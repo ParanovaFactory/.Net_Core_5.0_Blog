@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add Service</h3>
+</div>
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Service Title")
+    <input type="text" name="ServiceTitle" class="form-control" />
+    <br />
+    @Html.Label("Service Image Url")
+    <input type="text" name="ServiceImage" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-primary">SAVE</button>
+</form>

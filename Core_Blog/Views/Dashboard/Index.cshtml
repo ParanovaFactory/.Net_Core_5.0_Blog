@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Corona Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/webcorona/template/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/webcorona/template/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="~/webcorona/template/assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="~/webcorona/template/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/webcorona/template/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/webcorona/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/webcorona/template/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/webcorona/template/assets/images/favicon.png" />
+</head>
+<body>
+
+    <div class="content-wrapper">
+        @await Component.InvokeAsync("FeatureStatistics")
+        @await Component.InvokeAsync("LastFiveProjects")
+        @await Component.InvokeAsync("DashboardStatistic")
+        @await Component.InvokeAsync("ProjectList")
+
+        <div class="row">
+            @await Component.InvokeAsync("Messages")
+            @await Component.InvokeAsync("PortfolioSlide")
+            @await Component.InvokeAsync("ToDoList")
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <!-- partial -->
+    <!-- main-panel ends -->
+    <!-- page-body-wrapper ends -->
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/webcorona/template/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/webcorona/template/assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="~/webcorona/template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="~/webcorona/template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/webcorona/template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/webcorona/template/assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+</body>
+</html>

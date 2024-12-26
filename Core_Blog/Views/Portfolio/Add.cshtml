@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add Project</h3>
+</div>
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Portfolio Name")
+    <input type="text" name="PortfolioName" class="form-control" />
+    <br />
+    @Html.Label("Portfolio Image")
+    <input type="text" name="PortfolioImage" class="form-control" />
+    <br />
+    @Html.Label("Portfolio Url")
+    <input type="text" name="PortfolioUrl" class="form-control" />
+    <br />
+    @Html.Label("Project Name")
+    <input type="text" name="PortfolioProject" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-primary">SAVE</button>
+</form>

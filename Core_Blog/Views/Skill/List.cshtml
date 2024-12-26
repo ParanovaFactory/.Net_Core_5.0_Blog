@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Skill Table</h3>
+</div>
+<!--Table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Title</th>
+                <th scope="col" class="sort" data-sort="status">Percent</th>
+                <th scope="col">Delete</th>
+                <th scope="col" class="sort" data-sort="completion">Edit</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SkillId</td>
+                    <td class="budget">
+                        @item.SkillTitle
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span class="completion mr-2">
+                                @item.SkillValue%
+                            </span>
+                            <div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="
+                        @item.SkillValue" aria-valuemin="0" aria-valuemax="100" style="width: @item.SkillValue%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><a href="/Skill/Delete/@item.SkillId" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/Skill/Edit/@item.SkillId" class="btn btn-warning">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Skill/Add/" class="btn btn-primary">Add New Skill</a>
+</div>
